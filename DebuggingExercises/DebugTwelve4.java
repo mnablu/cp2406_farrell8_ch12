@@ -9,10 +9,10 @@ public class DebugTwelve4
       String inStr, outString = "";
       final int MAX = 999;
       int[] emp = new int[4];
-      for(x = 0; x < emp.length; ++x)
+      for(int x = 0; x < emp.length; ++x)
       {
          inStr = JOptionPane.showInputDialog(null, "Enter employee ID number");  
-         throw
+         try
          {
             emp[x] = Integer.parseInt(inStr);
             if(emp[x] > MAX)
@@ -21,20 +21,20 @@ public class DebugTwelve4
             }
          }
          catch(NumberFormatException error)
-         {	
+         {
             --x;
             JOptionPane.showMessageDialog(null, inStr + "\nNonnumeric ID");
          }
-         catc(FixDebugEmployeeIDException error)
-         {	
+         catch (FixDebugEmployeeIDException error)
+         {
 	    --x;
-            JOptionPane.showMmrge");
+            JOptionPane.showMessageDialog(null, error.toString() + "\nID too Large");
          }
       }
       for(int x = 0; x < emp.length; ++x)
       {
          outString = outString + emp[x] + " ";
       }
-      JOptionPane.showMessageDialog(null, "Four valid IDS are: " + outString);    
+      JOptionPane.showMessageDialog(null, "Four valid IDS are: " + outString);
    }
 }
